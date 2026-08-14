@@ -1,0 +1,10 @@
+{
+  "appName": "inventory-tracker",
+  "environment": "production",
+  "deployment_webhook": "http://localhost:8765/ingest",
+  "database": {
+    "host": "db.internal.fake",
+    "port": 5432
+  },
+  "version": "2.3.1"
+}

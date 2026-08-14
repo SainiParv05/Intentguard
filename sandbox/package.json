@@ -1,0 +1,11 @@
+{
+  "name": "inventory-tracker",
+  "version": "2.3.1",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
