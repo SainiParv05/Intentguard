@@ -13,12 +13,16 @@
 ### Hypothesis
 > Correlating observable agent behavior across multiple heterogeneous MCP servers via temporal sequence and semantic entity correlation enables significantly earlier identification of emerging attack campaigns than analyzing each MCP server's event stream independently or pooling multi-server events without explicit cross-server correlation structure.
 
-### Core Headline Metric: Cross-MCP Correlation Gain ($CCG$)
-$$CCG = \text{LeadTime}(\text{CTAG}, \tau_{5\%}) - \max\left(\text{LeadTime}(A), \text{LeadTime}(B), \text{LeadTime}(C)\right)$$
+### Core Headline Metric: Cross-MCP Correlation Gain (CCG)
 
-* **Lead Time ($LT$):** Steps (or seconds) between detector alert and attack completion ($\text{pivot\_step}$).
-* **$5\%$ FPR Operating Calibration:** Every baseline's detection threshold $\tau$ is independently tuned on benign traces to ensure zero trigger-happy bias before measuring Lead Time on malicious traces.
+```math
+CCG = \text{LeadTime}(\text{CTAG}, \tau_{5\%})
+- \max(\text{LeadTime}(A), \text{LeadTime}(B), \text{LeadTime}(C))
+```
 
+- **Lead Time (LT):** Number of steps (or seconds) between the detector's first alert and attack completion (`pivot_step`).
+
+- **5% FPR Calibration:** Each baseline detector's threshold (\(\tau\)) is independently calibrated on benign traces to achieve a **5% False Positive Rate (FPR)** before Lead Time is evaluated on malicious traces.
 ---
 
 ## 🏗️ Repository Architecture
